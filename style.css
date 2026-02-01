@@ -445,24 +445,33 @@ h1{
 }
 
 /* Face-safe cropping defaults */
-.team-media img{
+.team-media{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;     /* portrait-friendly (fixes chopped faces) */
+  min-height: 360px;       /* makes it visibly large */
+  background: rgba(255,255,255,.03);
+  overflow: hidden;
+}
+
+/* Base image behavior */
+.team-photo{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%; /* IMPORTANT: keeps faces higher */
   display: block;
-  filter: saturate(1.02) contrast(1.02);
-  transform: scale(1.01);
   transition: transform .25s ease, filter .25s ease;
+  filter: saturate(1.02) contrast(1.02);
 }
-.team-card:hover .team-media img{
-  transform: scale(1.05);
+/* Hover polish */
+.team-card:hover .team-photo{
+  transform: scale(1.04);
   filter: saturate(1.06) contrast(1.06);
 }
 
-/* Optional per-person tuning (use these classes on the <img>) */
-.team-media img.focus-jake{ object-position: center 10%; }
-.team-media img.focus-tyler{ object-position: center 0%; }
+/* Per-person crop tuning (adjust numbers if needed) */
+.focus-jake{ object-position: center 10%; }
+.focus-tyler{ object-position: center 0%; }
 
 .team-media-overlay{
   position: absolute;
