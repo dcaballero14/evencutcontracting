@@ -471,16 +471,6 @@ h1{
 .focus-jake{ object-position: center 10%; }
 .focus-tyler{ object-position: center 0%; }
 
-.team-media-overlay{
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0,0,0,0) 0%,
-    rgba(0,0,0,.08) 55%,
-    rgba(0,0,0,.28) 100%
-  );
-  pointer-events: none;
 }
 
 .team-body{ padding: 16px; text-align: center; }
